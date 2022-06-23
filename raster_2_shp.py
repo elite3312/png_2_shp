@@ -6,19 +6,20 @@
 # Description: 
 # ---------------------------------------------------------------------------
 
-# Import arcpy module
+
 import arcpy
 
 
-# Local variables:
-TH_Fold1_REAL_TEST_SA2_IMG1_Post10_png = "D:\\1102_work\\png_2_shp\\png_files\\TH_Fold1_REAL TEST SA2_IMG1_Post10.png"
-RasterT_png3 = "D:\\1102_work\\png_2_shp\\Default.gdb\\RasterT_png3"
+
+#edit the following variables to match your use case
+input_png = "D:\\1102_work\\png_2_shp\\png_files\\TH_Fold1_REAL TEST SA2_IMG1_Post10.png"
+polygon = "D:\\1102_work\\png_2_shp\\Default.gdb\\RasterT_png3"
 shp_files = "D:\\1102_work\\png_2_shp\\shp_files"
-shp_files__2_ = shp_files
 
-# Process: Raster to Polygon
-arcpy.RasterToPolygon_conversion(TH_Fold1_REAL_TEST_SA2_IMG1_Post10_png, RasterT_png3, "SIMPLIFY", "Value", "SINGLE_OUTER_PART", "")
 
-# Process: Feature Class To Shapefile (multiple)
-arcpy.FeatureClassToShapefile_conversion("D:\\1102_work\\png_2_shp\\Default.gdb\\RasterT_png3", shp_files)
+
+arcpy.RasterToPolygon_conversion(input_png, polygon, "SIMPLIFY", "Value", "SINGLE_OUTER_PART", "")
+
+
+arcpy.FeatureClassToShapefile_conversion(polygon, shp_files)
 
