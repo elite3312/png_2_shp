@@ -10,13 +10,14 @@
 import arcpy
 
 
-
 #edit the following variables to match your use case
-input_png = "D:\\1102_work\\png_2_shp\\png_files\\TH_Fold1_REAL TEST SA2_IMG1_Post10.png"
-polygon = "D:\\1102_work\\png_2_shp\\Default.gdb\\RasterT_png3"
-shp_files = "D:\\1102_work\\png_2_shp\\shp_files"
 
+arcpy.env.workspace = "."#work space
+input_png = "./png_files/test_resized.png"#the resized segmentation mask
+polygon = "./Default.gdb/test"#this is the gdb used for this project
+shp_files = "./shp_files"#the output dir of the shp file
 
+arcpy.env.overwriteOutput = True#this allows geoprocessing tools to overwrite existing datasets
 
 arcpy.RasterToPolygon_conversion(input_png, polygon, "SIMPLIFY", "Value", "SINGLE_OUTER_PART", "")
 

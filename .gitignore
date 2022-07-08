@@ -1,0 +1,8 @@
+*.txt
+*.gdb
+png_files
+raster_files
+shp_files
+*.mkv
+*.mxd
+debug_info
