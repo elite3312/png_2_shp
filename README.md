@@ -12,7 +12,7 @@ mkdir shp_files
 ```
 py .\resize_png.py
 ```
-3. move the accompanying .pgw into \png_files. If you do not have the .pgw file, generate one by running this script with the python provided by arcgis. 
+3. Move the accompanying .pgw into \png_files. If you do not have the .pgw file, generate one by running this script with the python provided by arcgis. 
 ```
 C:\Python27\ArcGIS10.8\python.exe .\raster_2_word_file.py
 ```
